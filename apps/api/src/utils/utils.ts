@@ -13,7 +13,7 @@ const sortBalance = (balances: Balance[], descending: boolean): Balance[] => {
   else return balances.sort((a, b) => a.balance - b.balance);
 };
 
-const balanceSorting = () => {
+export const balanceSorting = () => {
   let positiveBalance = balances.filter((balance) => balance.balance > 0);
   let negativeBalance = balances.filter((balance) => balance.balance < 0);
   const transactions: Transaction[] = [];
@@ -44,5 +44,3 @@ const balanceSorting = () => {
 
   return transactions;
 };
-
-console.log(balanceSorting());
