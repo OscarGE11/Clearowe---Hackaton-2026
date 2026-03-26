@@ -1,4 +1,4 @@
-import type { Balance, Transaction } from '@hackaton/types';
+import type { Balance, Transaction } from '@clearowe/types';
 
 const balances: Balance[] = [
   { name: 'Ana', balance: 15 },
