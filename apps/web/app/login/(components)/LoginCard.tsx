@@ -1,12 +1,7 @@
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import Link from "next/link";
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import Link from 'next/link';
 
 export default function LoginCard() {
   return (
@@ -24,13 +19,13 @@ export default function LoginCard() {
               <Input type="email" placeholder="Email..." />
               <Input type="password" placeholder="Password..." />
               <div className="flex justify-center">
-                {" "}
+                {' '}
                 <Button variant="default">Log in</Button>
               </div>
             </CardContent>
             <CardFooter className="flex justify-end">
               <span className="text-white/40">
-                No account?{" "}
+                No account?{' '}
                 <Link href="/register" className="text-primary underline">
                   Register
                 </Link>
