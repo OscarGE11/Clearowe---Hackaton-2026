@@ -25,5 +25,8 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,json,md}\"",
     "prepare": "husky"
   },
-  "packageManager": "bun@1.2.0"
+  "packageManager": "bun@1.2.0",
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10"
+  }
 }

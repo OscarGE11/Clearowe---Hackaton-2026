@@ -1,44 +1,48 @@
 'use client';
 
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import AppHeader from './(components)/AppHeader';
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { SparkleIcon, UsersIcon, WalletIcon } from '@phosphor-icons/react';
+import Navbar from '@/app/(components)/Navbar';
+import FeatureCard from '@/app/(components)/FeatureCard';
 
 export default function Home() {
   return (
-    <>
-      <AppHeader title="ClearOwe"></AppHeader>
-      <div className="w-full flex gap-3 mt-20 items-start">
-        <Card className="w-4/3">
-          <CardHeader>
-            <h1 className="font-bold text-xl text-white flex justify-center">
-              Easily track who owes you money — and who you owe
-            </h1>
-          </CardHeader>
-          <CardContent className="flex justify-center">
-            <Image
-              src="/"
-              alt="Imagen de como quedaría el final de un cálculo de deudas"
-              width={12}
-              height={12}
-            ></Image>
-          </CardContent>
-        </Card>
-        <Card className="w-1/2">
-          <CardContent>
-            <div className="font-bold text-lg text-white flex justify-center">
-              It&apos;s easy, just create a group, enter the members, and start tracking!
-            </div>
-          </CardContent>
-        </Card>
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar showLoginButton={true} />
+      <hr className="border-border" />
+
+      {/* Main Content */}
+      <div className="text-center mt-16 px-4">
+        <span className="inline-flex items-center bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase">
+          <SparkleIcon size={12} className="text-primary mb-4" weight="fill" />
+          Smart Expense Splitting
+        </span>
+        <h1 className="text-6xl font-extrabold mt-6 text-white leading-tight">
+          Split expenses, <br /> not friendships.
+        </h1>
+        <p className="text-lg text-muted-foreground mt-6 max-w-2xl mx-auto">
+          ClearOwe helps you effortlessly manage shared expenses with friends and family. Say
+          goodbye to awkward money conversations and hello to clear, easy settlements.
+        </p>
+
+        {/* Cards Section */}
+        <div className="flex flex-wrap justify-center gap-8 mt-16 pb-16">
+          <FeatureCard
+            icon={<SparkleIcon size={48} className="text-primary mb-4" weight="fill" />}
+            title="Smart Balance Sorting"
+            description="Our intelligent algorithm minimizes the number of transactions needed to settle debts."
+          />
+          <FeatureCard
+            icon={<UsersIcon size={48} className="text-primary mb-4" weight="fill" />}
+            title="Group Splits"
+            description="Easily create groups, add members, and split bills fairly, no matter how complex."
+          />
+          <FeatureCard
+            icon={<WalletIcon size={48} className="text-primary mb-4" weight="fill" />}
+            title="Effortless Tracking"
+            description="Keep a clear record of who owes whom and track all your shared expenses in one place."
+          />
+        </div>
       </div>
-      <footer className="flex justify-center mt-15">
-        <Button className="w-fit rounded-md" asChild>
-          <Link href="/login">Get Started</Link>
-        </Button>
-      </footer>
-    </>
+    </div>
   );
 }
